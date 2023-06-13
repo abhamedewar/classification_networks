@@ -11,6 +11,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--data_path', default=r'.\AID_combine', type=str)
 parser.add_argument('--csv_path', default=r'.\aid_dataset.csv', type=str)
 parser.add_argument('--class_mapping', default=r'.\class_mapping.json', type=str)
+parser.add_argument('--network_type', default='lenet', type=str)
 args = parser.parse_args()
 
 with open(args.class_mapping, "r") as json_file:
