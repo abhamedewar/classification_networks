@@ -22,35 +22,25 @@ Source: http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf
 * Input image size: 32*32*1
 
 #### Convolutional Layer 1:
+Input Channels: 1, Output Channels: 6, Stride: (1, 1), Kernel Size: (5, 5)
 
-- Input Channels: 1
-- Output Channels: 6
-- Stride: (1, 1)
-- Kernel Size: (5, 5)
-
-#### Convolutional Layer 2:
-
-- Input Channels: 6
-- Output Channels: 16
-- Stride: (1, 1)
-- Kernel Size: (5, 5)
+#### Convolutional Layer 2: 
+Input Channels: 6, Output Channels: 16, Stride: (1, 1), Kernel Size: (5, 5)
 
 #### Convolutional Layer 3:
-
-- Input Channels: 16
-- Output Channels: 120
-- Stride: (1, 1)
-- Kernel Size: (5, 5)
+Input Channels: 16, Output Channels: 120, Stride: (1, 1), Kernel Size: (5, 5)
 
 #### Fully Connected Layer 1:
-
-- Input Features: 120
-- Output Features: 84
+Input Features: 120, Output Features: 84
 
 #### Fully Connected Layer 2 (Output Layer):
+Input Features: 84, Output Features: Number of classes in the classification task (variable num_classes)
 
-- Input Features: 84
-- Output Features: Number of classes in the classification task (variable num_classes)
+## VGG
+The paper can be found at the following link: https://arxiv.org/pdf/1409.1556v6.pdf
+
+
+
 
 
 
