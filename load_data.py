@@ -3,7 +3,8 @@ import torch
 import pandas as pd
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, utils
-from skimage import io
+# from skimage import io
+from PIL import Image
 
 class CustomDataset(Dataset):
     '''
@@ -30,7 +31,7 @@ class CustomDataset(Dataset):
             root_dir: The root directory of the image files.
             transform: A function/transform to be applied on the image data.
         '''
-        
+
         self.data_df = pd.read_csv(csv_file)
         self.root_dir = root_dir
         self.transform = transform
@@ -57,7 +58,7 @@ class CustomDataset(Dataset):
         if torch.is_tensor(index):
             index = index.tolist()
         img_name = os.path.join(self.root_dir, self.data_df.iloc[index, 0])
-        image = io.imread(img_name)
+        image = Image.open(img_name)
         label = torch.tensor(self.data_df.iloc[index, 1])
 
         if self.transform:
