@@ -12,12 +12,13 @@
 
 # Details of various CNN architectures
 
-## GoogLeNet Inception v1
+## GoogLeNet/Inception v1
 The paper can be found at the following link: https://arxiv.org/pdf/1409.4842.pdf
 
 * The main contribution of the GoogLeNet architecture is the inception module.
 * Making the decision between pooling and convolutional operations, as well as determining the size and number of filters applied to the output of the previous layer, is a critical aspect of the network architecture design process.
 * The Inception module addresses the trade-off between pooling and convolutional operations by running multiple operations simultaneously, such as pooling and convolution, and using multiple filter sizes (e.g., 3x3, 5x5). This approach allows for capturing diverse features without compromising performance.
+* Image size- 224 x 224 x 3
 
 ### Architecture Details:
 
@@ -25,10 +26,6 @@ The paper can be found at the following link: https://arxiv.org/pdf/1409.4842.pd
 
 ## VGG
 The paper can be found at the following link: https://arxiv.org/pdf/1409.1556v6.pdf
-
-The different configurations of VGG are:
-
-![image](https://github.com/abhamedewar/classification_networks/assets/20626950/bc8ff19b-a23e-4142-a461-a8479ff2d8dd)
 
 * This repository consists of implementation of VGG-11, VGG-13, VGG-16 and VGG-19 architectures.
 * Image size: 224 x 224 x 3
@@ -41,14 +38,16 @@ The different configurations of VGG are:
 
 ### Architecture Details:
 
+The different configurations of VGG are:
+
+![image](https://github.com/abhamedewar/classification_networks/assets/20626950/bc8ff19b-a23e-4142-a461-a8479ff2d8dd)
+
 * Kernel size for convolutional layers = 3 x 3, stride = 1
 * Kernel size for MaxPooling is 2 x 2, stride = 2
 
 ## LeNet
 
-![image](https://github.com/abhamedewar/classification_networks/assets/20626950/08e82682-092e-4266-9be4-51511c859637)
-
-Source: http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf
+The link to the paper: http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf
 
 * The LeNet-5 architecture is a classic convolutional neural network (CNN) designed by Yann LeCun et al. It is primarily known for its effectiveness in handwritten digit recognition tasks. This section provides an overview of the LeNet architecture and its components.
 * The LeNet architecture consists of three convolutional layers (self.conv1, self.conv2, self.conv3) followed by two fully connected layers (self.fc1, self.fc2).
@@ -56,6 +55,8 @@ Source: http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf
 * Input image size: 32*32*1
   
 ### Architecture Details:
+
+![image](https://github.com/abhamedewar/classification_networks/assets/20626950/08e82682-092e-4266-9be4-51511c859637)
 
 * Convolutional Layer 1: Input Channels: 1, Output Channels: 6, Stride: (1, 1), Kernel Size: (5, 5)
 * Convolutional Layer 2: Input Channels: 6, Output Channels: 16, Stride: (1, 1), Kernel Size: (5, 5)
