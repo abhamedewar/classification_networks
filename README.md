@@ -29,6 +29,17 @@ The paper can be found at the following link: https://arxiv.org/pdf/1409.4842.pd
 
 ![image](https://github.com/abhamedewar/classification_networks/assets/20626950/c7395a62-7ef6-4d4e-b2f0-e6b3ce6cb6e6)
 
+**Inception block**
+
+## AlexNet
+
+* **Input image size: 32*32*1**
+* 5 convolutional layers, 3 fully connected layers
+
+### Architecture Details:
+
+![image](https://github.com/abhamedewar/classification_networks/assets/20626950/74cd7548-c551-42c3-bb33-393dd3806cd3)
+
 ## VGG
 The paper can be found at the following link: https://arxiv.org/pdf/1409.1556v6.pdf
 
