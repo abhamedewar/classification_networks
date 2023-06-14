@@ -18,17 +18,22 @@ The paper can be found at the following link: https://arxiv.org/pdf/1409.4842.pd
 * The main contribution of the GoogLeNet architecture is the inception module.
 * Making the decision between pooling and convolutional operations, as well as determining the size and number of filters applied to the output of the previous layer, is a critical aspect of the network architecture design process.
 * The Inception module addresses the trade-off between pooling and convolutional operations by running multiple operations simultaneously, such as pooling and convolution, and using multiple filter sizes (e.g., 3x3, 5x5). This approach allows for capturing diverse features without compromising performance.
-* Image size- 224 x 224 x 3
+* **Input image size- 224 x 224 x 3**
 
 ### Architecture Details:
 
 ![image](https://github.com/abhamedewar/classification_networks/assets/20626950/9db628f8-8f68-4957-bb03-274054879a68)
 
+* **#3×3 reduce and #5×5 reduce** stands for the number of 1×1 filters in the reduction layer used before the 3×3 and 5×5 convolutions.
+* **pool proj column** is the number of 1×1 filtersafter the built-in max-pooling.
+
+![image](https://github.com/abhamedewar/classification_networks/assets/20626950/c7395a62-7ef6-4d4e-b2f0-e6b3ce6cb6e6)
+
 ## VGG
 The paper can be found at the following link: https://arxiv.org/pdf/1409.1556v6.pdf
 
 * This repository consists of implementation of VGG-11, VGG-13, VGG-16 and VGG-19 architectures.
-* Image size: 224 x 224 x 3
+* **Input image size: 224 x 224 x 3**
 * Mean RGB value of training set is substracted from each image in training set.
 * Batch size- 256
 * L2- 5*10^-4
@@ -52,7 +57,7 @@ The link to the paper: http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf
 * The LeNet-5 architecture is a classic convolutional neural network (CNN) designed by Yann LeCun et al. It is primarily known for its effectiveness in handwritten digit recognition tasks. This section provides an overview of the LeNet architecture and its components.
 * The LeNet architecture consists of three convolutional layers (self.conv1, self.conv2, self.conv3) followed by two fully connected layers (self.fc1, self.fc2).
 * LeNet uses tanh and sigmoid activation function.
-* Input image size: 32*32*1
+* **Input image size: 32*32*1**
   
 ### Architecture Details:
 
