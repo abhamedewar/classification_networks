@@ -45,10 +45,10 @@ with open(args.class_mapping, "r") as json_file:
 
 data_df = pd.read_csv(args.csv_path)
 
-#EDA
-dataset_stats(data_df, class_map)
-plot_class_distribution(data_df, class_map)
-visualize_samples(data_df, args.data_path, class_map)
+# #EDA
+# dataset_stats(data_df, class_map)
+# plot_class_distribution(data_df, class_map)
+# visualize_samples(data_df, args.data_path, class_map)
 
 #setup device to be used
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -61,7 +61,6 @@ num_epochs = 1
 
 model, transform = get_model(args.network_type, num_classes)
 model.to(device)
-print(model)
 
 custom_dataset = CustomDataset(args.csv_path, args.data_path, transform)
 split = [int(len(custom_dataset)*0.9), int(len(custom_dataset)*0.1)]
@@ -94,7 +93,7 @@ def train(model, trainloader, num_epoch):
             img_grid = torchvision.utils.make_grid(batch)
             writer.add_image('train/images', img_grid, i)
             #visualize weights of the convolution layer 3
-            writer.add_histogram('conv 3', model.conv3.weight.detach().cpu().numpy(), i)
+            writer.add_histogram('conv 3', model.conv3.weight, i)
             curr_correct = (torch.argmax(pred, dim=1) == label).sum().item()
             curr_train_acc = float(curr_correct)/float(batch.shape[0])
             writer.add_scalar("Accuracy/train", curr_train_acc, i)
