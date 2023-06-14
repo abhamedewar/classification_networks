@@ -19,6 +19,14 @@ Currently the code supports the following CNN architectures: ['googlenet', 'resn
 
 Once you have the dataset ready in the above format just run the code by executing the following command:
 
+Install the dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+Run the code:
+
 ```
 python main.py --data_path <folder with all images> --csv_path <path to csv file> --class_mapping <json file with class mapping> --network_type <cnn type>
 ```

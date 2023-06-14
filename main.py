@@ -9,6 +9,8 @@ Currently the repository supports the following CNN architectures:
     VGG-13
     VGG-16
     VGG-19
+3. GoogLeNet  
+4. AlexNet  
 
 The codebase also provides support for conducting exploratory data analysis on the custom dataset.
 The training module is integrated with tensorboard to visualize training loss, validation loss,
@@ -27,8 +29,7 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 from torch.utils.data import DataLoader
 from load_data import CustomDataset
-from models.lenet import LeNet
-from models.vgg import VGG
+from utils import get_model
 from eda import dataset_stats, plot_class_distribution, visualize_samples
 from torch.utils.tensorboard import SummaryWriter
 
@@ -36,18 +37,13 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--data_path', default=r'.\AID_combine', type=str)
 parser.add_argument('--csv_path', default=r'.\aid_dataset.csv', type=str)
 parser.add_argument('--class_mapping', default=r'.\class_mapping.json', type=str)
-parser.add_argument('--network_type', default='lenet', type=str, choices=['lenet', 'vgg11', 'vgg13', 'vgg16', 'vgg19'])
+parser.add_argument('--network_type', default='lenet', type=str, choices=['alexnet', 'lenet', 'vgg11', 'vgg13', 'vgg16', 'vgg19'])
 args = parser.parse_args()
 
 with open(args.class_mapping, "r") as json_file:
     class_map = json.load(json_file)
 
 data_df = pd.read_csv(args.csv_path)
-
-vgg = {'vgg11': [64, 'M', 128, 'M', 256, 256, 'M', 512, 512, 'M', 512, 512, 'M'],
-    'vgg16': [64, 64, 'M', 128, 128, 'M', 256, 256, 256, 'M', 512, 512, 512, 'M', 512, 512, 512, 'M'], 
-    'vgg13': [64, 64, 'M', 128, 128, 'M', 256, 256, 'M', 512, 512, 'M', 512, 512, 'M'], 
-    'vgg19': [64, 64, 'M', 128, 128, 'M', 256, 256, 256, 256, 'M', 512, 512, 512, 512, 'M', 512, 512, 512, 512, 'M']}
 
 #EDA
 dataset_stats(data_df, class_map)
@@ -63,31 +59,9 @@ batch_size = 64
 learning_rate = 0.001
 num_epochs = 1
 
-
-#if image coloured
-# normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-
-#if image is Grayscale
-normalize = transforms.Normalize(mean=[0.5], std=[0.5])
-
-if args.network_type == 'lenet':
-    model = LeNet(num_classes=num_classes)
-    model.to(device)
-    transform = transforms.Compose([
-                transforms.Grayscale(),
-				transforms.Resize(32),
-				transforms.ToTensor(),
-				normalize,
-			])
-
-elif 'vgg' in args.network_type:
-    in_channels = 3
-    model = VGG(in_channels, num_classes, vgg[args.network_type])  
-    transform = transforms.Compose([
-            transforms.Resize(224),
-            transforms.ToTensor(),
-            normalize,
-        ])  
+model, transform = get_model(args.network_type, num_classes)
+model.to(device)
+print(model)
 
 custom_dataset = CustomDataset(args.csv_path, args.data_path, transform)
 split = [int(len(custom_dataset)*0.9), int(len(custom_dataset)*0.1)]
