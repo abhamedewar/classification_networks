@@ -1,6 +1,6 @@
-# Convolutional neural network Networks Implementation from scratch
+# Implementation of famous Convolutional Neural Network from scratch
 
-#### Training on custom dataset
+## Custom Dataset can be used to train the networks present in this repository. Just provide the dataset in the format given below and run any model of choice. 
 
 ## Dataset format:
 #### Root directory
@@ -10,11 +10,49 @@
 * The "Image Name" column contains the names of the image files present in the root directory. Each entry in this column should uniquely identify an image file.
 * The "Class" column represents the corresponding class or label for each image. It contains numerical values.
 
+## VGG
+The paper can be found at the following link: https://arxiv.org/pdf/1409.1556v6.pdf
+
+The different configurations of VGG are:
+
+![image](https://github.com/abhamedewar/classification_networks/assets/20626950/bc8ff19b-a23e-4142-a461-a8479ff2d8dd)
+
+* This repository consists of implementation of VGG-11, VGG-13, VGG-16 and VGG-19 architectures.
+* Image size: 224 x 224 x 3
+* Mean RGB value of training set is substracted from each image in training set.
+* Batch size- 256
+* L2- 5*10^-4
+* Dropout ratio- 0.5
+* Momentum- 0.9
+* The learning rate was initially set to 10^−2 and then decreased by a factor of 10 when the validation set accuracy stopped improving.
+
+### Architecture Details:
+
+* Kernel size for convolutional layers = 3 x 3, stride = 1
+* Kernel size for MaxPooling is 2 x 2, stride = 2
+
 ## LeNet
 
 ![image](https://github.com/abhamedewar/classification_networks/assets/20626950/08e82682-092e-4266-9be4-51511c859637)
 
 Source: http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf
 
+* The LeNet-5 architecture is a classic convolutional neural network (CNN) designed by Yann LeCun et al. It is primarily known for its effectiveness in handwritten digit recognition tasks. This section provides an overview of the LeNet architecture and its components.
+* The LeNet architecture consists of three convolutional layers (self.conv1, self.conv2, self.conv3) followed by two fully connected layers (self.fc1, self.fc2).
 * LeNet uses tanh and sigmoid activation function.
-* Input image size: 32*32
+* Input image size: 32*32*1
+  
+### Architecture Details:
+
+* Convolutional Layer 1: Input Channels: 1, Output Channels: 6, Stride: (1, 1), Kernel Size: (5, 5)
+* Convolutional Layer 2: Input Channels: 6, Output Channels: 16, Stride: (1, 1), Kernel Size: (5, 5)
+* Convolutional Layer 3: Input Channels: 16, Output Channels: 120, Stride: (1, 1), Kernel Size: (5, 5)
+* Fully Connected Layer 1: Input Features: 120, Output Features: 84
+* Fully Connected Layer 2 (Output Layer): Input Features: 84, Output Features: Number of classes in the classification task (variable num_classes)
+
+
+
+
+
+
+
