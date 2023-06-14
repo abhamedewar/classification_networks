@@ -1,4 +1,4 @@
-# Implementation of famous Convolutional Neural Network from scratch
+# Implementation of famous Convolutional Neural Network from Scratch
 
 ## Custom Dataset can be used to train the networks present in this repository. Just provide the dataset in the format given below and run any model of choice. 
 
@@ -9,6 +9,19 @@
 * The dataset is accompanied by a CSV file that contains two columns: "Image Name" and "Class". This CSV file serves as a reference to associate each image with its respective class or label.
 * The "Image Name" column contains the names of the image files present in the root directory. Each entry in this column should uniquely identify an image file.
 * The "Class" column represents the corresponding class or label for each image. It contains numerical values.
+
+# Details of various CNN architectures
+
+## GoogLeNet
+The paper can be found at the following link: https://arxiv.org/pdf/1409.4842.pdf
+
+* The main contribution of the GoogLeNet architecture is the inception module.
+* Making the decision between pooling and convolutional operations, as well as determining the size and number of filters applied to the output of the previous layer, is a critical aspect of the network architecture design process.
+* The Inception module addresses the trade-off between pooling and convolutional operations by running multiple operations simultaneously, such as pooling and convolution, and using multiple filter sizes (e.g., 3x3, 5x5). This approach allows for capturing diverse features without compromising performance.
+
+### Architecture Details:
+
+![image](https://github.com/abhamedewar/classification_networks/assets/20626950/9db628f8-8f68-4957-bb03-274054879a68)
 
 ## VGG
 The paper can be found at the following link: https://arxiv.org/pdf/1409.1556v6.pdf
