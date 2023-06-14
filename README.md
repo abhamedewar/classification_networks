@@ -35,12 +35,12 @@ The paper can be found at the following link: https://arxiv.org/pdf/1409.4842.pd
 
 ### Architecture Details:
 
-![image](https://github.com/abhamedewar/classification_networks/assets/20626950/9db628f8-8f68-4957-bb03-274054879a68)
+![image](https://github.com/abhamedewar/classification_networks/assets/20626950/5e704450-dff8-4d13-9336-e4eaea6402b4)
 
 * **#3×3 reduce and #5×5 reduce** stands for the number of 1×1 filters in the reduction layer used before the 3×3 and 5×5 convolutions.
 * **pool proj column** is the number of 1×1 filtersafter the built-in max-pooling.
 
-![image](https://github.com/abhamedewar/classification_networks/assets/20626950/c7395a62-7ef6-4d4e-b2f0-e6b3ce6cb6e6)
+![image](https://github.com/abhamedewar/classification_networks/assets/20626950/165d811f-e440-4b8d-ba38-36c222b3fac4)
 
 **Inception block**
 
@@ -51,7 +51,9 @@ The paper can be found at the following link: https://arxiv.org/pdf/1409.4842.pd
 
 ### Architecture Details:
 
-![image](https://github.com/abhamedewar/classification_networks/assets/20626950/74cd7548-c551-42c3-bb33-393dd3806cd3)
+![image](https://github.com/abhamedewar/classification_networks/assets/20626950/70955335-6867-4cbf-9ff9-5f5c45255e83)
+
+Source: https://www.mdpi.com/2072-4292/9/8/848
 
 ## VGG
 The paper can be found at the following link: https://arxiv.org/pdf/1409.1556v6.pdf
@@ -69,7 +71,7 @@ The paper can be found at the following link: https://arxiv.org/pdf/1409.1556v6.
 
 The different configurations of VGG are:
 
-![image](https://github.com/abhamedewar/classification_networks/assets/20626950/bc8ff19b-a23e-4142-a461-a8479ff2d8dd)
+![image](https://github.com/abhamedewar/classification_networks/assets/20626950/bc3a8f97-d94b-4831-b41f-a355b0a5c2c2)
 
 * Kernel size for convolutional layers = 3 x 3, stride = 1
 * Kernel size for MaxPooling is 2 x 2, stride = 2
@@ -85,7 +87,7 @@ The link to the paper: http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf
   
 ### Architecture Details:
 
-![image](https://github.com/abhamedewar/classification_networks/assets/20626950/08e82682-092e-4266-9be4-51511c859637)
+![image](https://github.com/abhamedewar/classification_networks/assets/20626950/2cf2b001-a663-450b-b246-b4e56929296b)
 
 * Convolutional Layer 1: Input Channels: 1, Output Channels: 6, Stride: (1, 1), Kernel Size: (5, 5)
 * Convolutional Layer 2: Input Channels: 6, Output Channels: 16, Stride: (1, 1), Kernel Size: (5, 5)
