@@ -1,5 +1,6 @@
-# Implementation of famous Convolutional Neural Network from Scratch
+# Implementation of State-of-the-Art Convolutional Neural Network from Scratch
 
+## GoogLeNet, ResNet, AlexNet, LeNet, VGG11, VGG13, VGG16, VGG19
 ## Custom Dataset can be used to train the networks present in this repository. Just provide the dataset in the format given below and run any model of choice. 
 
 ## Dataset format:
@@ -9,6 +10,18 @@
 * The dataset is accompanied by a CSV file that contains two columns: "Image Name" and "Class". This CSV file serves as a reference to associate each image with its respective class or label.
 * The "Image Name" column contains the names of the image files present in the root directory. Each entry in this column should uniquely identify an image file.
 * The "Class" column represents the corresponding class or label for each image. It contains numerical values.
+#### Class Mapping JSON:
+* Json file with class mapping. Refer class_mapping.json.
+  
+## Running the code:
+
+Currently the code supports the following CNN architectures: ['googlenet', 'resnet', 'alexnet', 'lenet', 'vgg11', 'vgg13', 'vgg16', 'vgg19'].
+
+Once you have the dataset ready in the above format just run the code by executing the following command:
+
+```
+python main.py --data_path <folder with all images> --csv_path <path to csv file> --class_mapping <json file with class mapping> --network_type <cnn type>
+```
 
 # Details of various CNN architectures
 
