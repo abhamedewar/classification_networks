@@ -12,7 +12,7 @@
 
 # Details of various CNN architectures
 
-## GoogLeNet
+## GoogLeNet Inception v1
 The paper can be found at the following link: https://arxiv.org/pdf/1409.4842.pdf
 
 * The main contribution of the GoogLeNet architecture is the inception module.
