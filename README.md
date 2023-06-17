@@ -48,9 +48,26 @@ The paper can be found at the following link: https://arxiv.org/pdf/1409.4842.pd
 * **#3×3 reduce and #5×5 reduce** stands for the number of 1×1 filters in the reduction layer used before the 3×3 and 5×5 convolutions.
 * **pool proj column** is the number of 1×1 filtersafter the built-in max-pooling.
 
+### Inception block
+
 ![image](https://github.com/abhamedewar/classification_networks/assets/20626950/165d811f-e440-4b8d-ba38-36c222b3fac4)
 
-**Inception block**
+## ResNet
+
+The paper can be found at the following link: https://arxiv.org/abs/1512.03385
+
+* The problem with deeper networks is that it can cause vanishing gradient problem.
+* The main idea behind the paper is to use skip connections to address the problem of vanishing gradient.(Introduced residual blocks as shown below)
+* The way to create ResNet is taking multiple residual blocks and stacking them to create a deep neural network.
+* **Input image size- 224 x 224 x 3**
+
+### Residual Block
+
+![image](https://github.com/abhamedewar/classification_networks/assets/20626950/4c43f199-28de-497e-89bf-3ea070aab11e)
+
+### Architecture Details:
+
+![image](https://github.com/abhamedewar/classification_networks/assets/20626950/05ab5524-6577-4164-82f1-bf55ac05035d)
 
 ## AlexNet
 
