@@ -1,6 +1,6 @@
 # Implementation of State-of-the-Art Convolutional Neural Network from Scratch
 
-## GoogLeNet, ResNet, AlexNet, LeNet, VGG11, VGG13, VGG16, VGG19
+## GoogLeNet, ResNet18, ResNet34, ResNet50, ResNet101, ResNet152, AlexNet, LeNet, VGG11, VGG13, VGG16, VGG19
 ## Custom Dataset can be used to train the networks present in this repository. Just provide the dataset in the format given below and run any model of choice. 
 
 ## Dataset format:
