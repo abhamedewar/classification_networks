@@ -37,7 +37,9 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--data_path', default=r'.\AID_combine', type=str)
 parser.add_argument('--csv_path', default=r'.\aid_dataset.csv', type=str)
 parser.add_argument('--class_mapping', default=r'.\class_mapping.json', type=str)
-parser.add_argument('--network_type', default='lenet', type=str, description=['googlenet/inception','alexnet', 'lenet', 'vgg11', 'vgg13', 'vgg16', 'vgg19'])
+parser.add_argument('--network_type', default='lenet', type=str, \
+description="Currently supports: 'resnet18', 'resnet34', 'resnet50', 'resnet101', 'resnet152', 'googlenet/inception','alexnet', 'lenet', 'vgg11', 'vgg13', 'vgg16', 'vgg19'")
+
 args = parser.parse_args()
 
 with open(args.class_mapping, "r") as json_file:
