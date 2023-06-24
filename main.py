@@ -4,13 +4,10 @@ popular architectures from scratch.
 
 Currently the repository supports the following CNN architectures:
 1. LeNet
-2. VGGNet
-    VGG-11
-    VGG-13
-    VGG-16
-    VGG-19
+2. VGGNet: vgg11, vgg13, vgg16, vgg19
 3. GoogLeNet  
 4. AlexNet  
+5. ResNet: 'resnet18', 'resnet34', 'resnet50', 'resnet101', 'resnet152'
 
 The codebase also provides support for conducting exploratory data analysis on the custom dataset.
 The training module is integrated with tensorboard to visualize training loss, validation loss,
